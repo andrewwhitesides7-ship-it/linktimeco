@@ -452,7 +452,7 @@ export default function Home() {
 
                   playsInline
 
-                  poster="/images/detail-3.jpg"
+                  poster="/images/hero.jpg"
 
                   aria-label="The Dimple Dial resting in its open red presentation box"
 
