@@ -7,12 +7,11 @@ export default function BuyButton({ label }) {
     ? CHECKOUT_URL
     : `mailto:${CONTACT_EMAIL}?subject=Links%20Time%20Co.%20Order&body=I%20want%20to%20order%20the%20Dimple%20Dial%20($${PRICE}).`;
 
+  const onClick = () =>
+    track("buy_click", { destination: CHECKOUT_URL ? "square" : "email" });
+
   return (
-    
-      className="btn"
-      href={href}
-      onClick={() => track("buy_click", { destination: CHECKOUT_URL ? "square" : "email" })}
-    >
+    <a className="btn" href={href} onClick={onClick}>
       {label || `Reserve yours \u2022 $${PRICE}`}
     </a>
   );
