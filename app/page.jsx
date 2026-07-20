@@ -127,15 +127,9 @@ export default function Home() {
 
         {/* CUSTOM BALL */}
         <section className="section tight">
-          <div className="wrap split">
-            <Reveal className="d1">
-              <img
-                src="/images/wrist.jpg"
-                alt="The Dimple Dial worn on the wrist"
-              />
-            </Reveal>
+          <div className="wrap-narrow center">
             <Reveal>
-              <span className="eyebrow">Custom builds</span>
+              <span className="eyebrow center">Custom builds</span>
               <h2>Your ball. Your story. Your watch.</h2>
               <p className="lede">
                 The ball from your first hole-in-one. The one you sank to win
