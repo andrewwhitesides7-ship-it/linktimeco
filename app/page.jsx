@@ -118,7 +118,7 @@ export default function Home() {
             </Reveal>
             <Reveal className="d1">
               <img
-                src="/images/detail-1.jpg"
+                src="/images/detail-1.png"
                 alt="Close-up of the golf ball dial showing the dimple texture"
               />
             </Reveal>
