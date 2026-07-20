@@ -222,14 +222,7 @@ export default function Home() {
                   />
                 </figure>
               </Reveal>
-              <Reveal className="d3">
-                <figure>
-                  <img
-                    src="/images/box.jpg"
-                    alt="The Dimple Dial in its red presentation box"
-                  />
-                </figure>
-              </Reveal>
+      
             </div>
             <Reveal>
               <figure className="video-band">
@@ -283,7 +276,7 @@ export default function Home() {
                 <span className="tee">03 &mdash; Holed out</span>
                 <h3>It ships</h3>
                 <p>
-                  Tracked and insured, free anywhere in the US. About three
+                  Tracked and insured, free anywhere in the US. About two
                   weeks from order to wrist.
                 </p>
               </Reveal>
@@ -319,12 +312,12 @@ export default function Home() {
             </Reveal>
             <div style={{ marginTop: "32px" }}>
               <details className="faq-item">
-                <summary>Why does it take two weeks to build?</summary>
+                <summary>Why does it take a week to build?</summary>
                 <p>
                   Each watch is built by hand when you order it. Cutting and
                   seating a real golf ball into a watch case is slow, careful
-                  work. Two weeks is what it takes to do it right. With
-                  shipping, plan on about three weeks from order to wrist.
+                  work. A week is what it takes to do it right. With
+                  shipping, plan on about two weeks from order to wrist.
                 </p>
               </details>
               <details className="faq-item">
