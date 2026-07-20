@@ -238,7 +238,7 @@ export default function Home() {
 
               <img
 
-                src="/images/detail-1.png"
+                src="/images/detail-3.jpg"
 
                 alt="Close-up of the golf ball dial showing the dimple texture"
 
@@ -408,7 +408,7 @@ export default function Home() {
 
                   <img
 
-                    src="/images/detail-2.jpg"
+                    src="/images/detail-1.png"
 
                     alt="Three-quarter studio view of the polished stainless steel case"
 
