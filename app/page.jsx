@@ -375,9 +375,7 @@ export default function Home() {
               <details className="faq-item">
                 <summary>Can I wear it while playing?</summary>
                 <p>
-                  It&apos;s built for the clubhouse more than the fairway. It
-                  handles daily wear fine, but we&apos;d take it off before
-                  you swing, the same as any steel bracelet watch.
+                  It&apos;s built for the clubhouse and the fairway! 
                 </p>
               </details>
             </div>
