@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div className="announce">
-        Made to order &bull; about 3 weeks to your wrist &bull; free US shipping
+        Made to order &bull; about 2 weeks to your wrist &bull; free US shipping
       </div>
 
       <nav className="nav">
