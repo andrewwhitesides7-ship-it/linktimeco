@@ -13,3 +13,5 @@ export default function BuyButton({ label }) {
     </a>
   );
 }
+import { track } from '@vercel/analytics';
+track('checkout_click');
