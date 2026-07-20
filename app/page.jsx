@@ -74,17 +74,11 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-visual">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/images/hero.jpg"
-              aria-label="The Dimple Dial watch with a genuine golf ball dial and red second hand"
-            >
-              <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
-            <div className="hero-badge">Made to order</div>
+            <span className="hero-badge">Handcrafted</span>
+            <img 
+              src="/images/box.jpg" 
+              alt="Links Time Co. premium watch box packaging containing the custom Dimple Dial watch" 
+            />
           </div>
         </section>
 
@@ -216,23 +210,15 @@ export default function Home() {
                   />
                 </figure>
               </Reveal>
-      
+              <Reveal className="d3">
+                <figure>
+                  <img
+                    src="/images/box.jpg"
+                    alt="The custom Dimple Dial presentation box setup"
+                  />
+                </figure>
+              </Reveal>
             </div>
-            <Reveal>
-              <figure className="video-band">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  poster="/images/detail-3.jpg"
-                  aria-label="The Dimple Dial resting in its open red presentation box"
-                >
-                  <source src="/videos/box.mp4" type="video/mp4" />
-                </video>
-                <figcaption>Every order arrives like a gift</figcaption>
-              </figure>
-            </Reveal>
           </div>
         </section>
 
