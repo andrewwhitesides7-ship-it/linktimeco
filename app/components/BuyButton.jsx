@@ -14,4 +14,10 @@ export default function BuyButton({ label }) {
   );
 }
 import { track } from '@vercel/analytics';
-track('checkout_click');
+
+
+  href="https://square.link/u/YOUR_LINK"
+  onClick={() => track('buy_click')}
+>
+  Buy Now
+</a>
