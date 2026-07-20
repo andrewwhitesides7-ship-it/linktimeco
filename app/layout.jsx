@@ -3,6 +3,7 @@ import "@fontsource/cormorant-garamond/600-italic.css";
 import "@fontsource/archivo/400.css";
 import "@fontsource/archivo/600.css";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://linkstimeco.com"),
@@ -20,7 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
