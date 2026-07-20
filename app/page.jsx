@@ -424,7 +424,7 @@ export default function Home() {
 
                   <img
 
-                    src="/images/detail-3.jpg"
+                    src="/images/detail-2.jpg"
 
                     alt="Caseback view showing the NH34 automatic movement"
 
