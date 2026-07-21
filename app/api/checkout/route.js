@@ -24,7 +24,7 @@ export async function POST(req) {
               description:
                 "Handcrafted automatic golf watch. Your ball, built into the dial. Lifetime guarantee.",
             },
-            unit_amount: 50000,
+            unit_amount: 40000,
           },
           quantity: 1,
         },
