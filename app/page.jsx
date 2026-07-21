@@ -1,9 +1,9 @@
 import Reveal from "./components/Reveal";
 import BuyButton from "./components/BuyButton";
 import StickyBar from "./components/StickyBar";
-import CheckoutSection from "./components/CheckoutSection";
+import CheckoutModal from "./components/CheckoutModal";
 import EmailCapture from "./components/EmailCapture";
-import { BUILD_TIME_WEEKS, CONTACT_EMAIL, PRICE } from "../lib/config";
+import { CONTACT_EMAIL, PRICE } from "../lib/config";
 
 const Check = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -297,15 +297,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* EMAIL CAPTURE */}
-        <section className="section tight">
-          <div className="wrap">
-            <Reveal>
-              <EmailCapture />
-            </Reveal>
-          </div>
-        </section>
-
         {/* FAQ */}
         <section className="section tight">
           <div className="wrap-narrow">
@@ -379,7 +370,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FINAL CTA + CHECKOUT */}
+        {/* FINAL CTA */}
         <section className="final wrap" id="buy">
           <Reveal>
             <span className="eyebrow center">Limited by our own two hands</span>
@@ -388,9 +379,12 @@ export default function Home() {
               <span className="price-inline">${PRICE}</span> &bull; free US
               shipping &bull; about 2 weeks to your wrist
             </p>
-            <CheckoutSection label="Order the Dimple Dial" />
+            <BuyButton label="Order the Dimple Dial" />
           </Reveal>
         </section>
+
+        <CheckoutModal />
+        <EmailCapture />
       </main>
 
       <StickyBar />
