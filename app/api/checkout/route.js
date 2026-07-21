@@ -33,13 +33,16 @@ export async function POST(req) {
       shipping_address_collection: { allowed_countries: ["US"] },
       custom_fields: [
         {
-          key: "dial_option",
+          key: "dialoption",
           label: { type: "custom", custom: "Dial option" },
           type: "dropdown",
           dropdown: {
             options: [
-              { label: "Build it from your ball (we email a label)", value: "custom_ball" },
-              { label: "Use one of your golf balls", value: "house_ball" },
+              {
+                label: "Build it from my ball (we email a label)",
+                value: "customball",
+              },
+              { label: "Use one of your golf balls", value: "houseball" },
             ],
           },
         },
