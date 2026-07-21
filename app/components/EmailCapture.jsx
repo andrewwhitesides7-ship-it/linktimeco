@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_ID";
 const PROMO_CODE = "Holein1";
 
 export default function EmailCapture() {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -26,19 +26,22 @@ export default function EmailCapture() {
       setError("Enter a valid email.");
       return;
     }
+    setSending(true);
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ email, source: "email_popup" }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
-      if (res.ok) setDone(true);
-      else setError("Something went wrong. Try again.");
+      if (res.ok) {
+        setDone(true);
+      } else {
+        setError("Something went wrong. Try again.");
+      }
     } catch {
       setError("Something went wrong. Try again.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -83,6 +86,7 @@ export default function EmailCapture() {
           transition: transform 0.15s ease, background 0.15s ease;
         }
         .ltc-email-btn:hover { background: #094d31; transform: translateY(-1px); }
+        .ltc-email-btn:disabled { background: #7fa593; cursor: default; transform: none; }
         .ltc-email-code {
           background: #f2f7f4; border-radius: 10px; padding: 14px;
           font-size: 22px; font-weight: 700; letter-spacing: 2px;
@@ -112,7 +116,7 @@ export default function EmailCapture() {
           <>
             <h2 className="ltc-email-title">20% off your first build</h2>
             <p className="ltc-email-sub">
-              Drop your email and get your code instantly.
+              Drop your email and we&apos;ll send your code right over.
             </p>
             <form onSubmit={submit}>
               <input
@@ -127,17 +131,22 @@ export default function EmailCapture() {
                   {error}
                 </p>
               )}
-              <button className="ltc-email-btn" type="submit">
-                Get my code
+              <button className="ltc-email-btn" type="submit" disabled={sending}>
+                {sending ? "Sending..." : "Get my code"}
               </button>
             </form>
             <p className="ltc-email-note">No spam. One email with your code.</p>
           </>
         ) : (
           <>
-            <h2 className="ltc-email-title">You&apos;re in.</h2>
-            <p className="ltc-email-sub">Use this at checkout for 20% off:</p>
+            <h2 className="ltc-email-title">Check your inbox.</h2>
+            <p className="ltc-email-sub">
+              Your code is on its way. Here it is now too:
+            </p>
             <div className="ltc-email-code">{PROMO_CODE}</div>
+            <p className="ltc-email-note">
+              Any ball works, yours or ours. Every dial is one of one.
+            </p>
           </>
         )}
       </div>
