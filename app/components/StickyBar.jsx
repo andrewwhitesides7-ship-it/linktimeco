@@ -1,7 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import { CHECKOUT_URL, CONTACT_EMAIL, PRICE } from "../../lib/config";
+import { PRICE } from "../../lib/config";
 
 export default function StickyBar() {
   const [show, setShow] = useState(false);
@@ -13,9 +12,9 @@ export default function StickyBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const href = CHECKOUT_URL
-    ? CHECKOUT_URL
-    : `mailto:${CONTACT_EMAIL}?subject=Links%20Time%20Co.%20Order&body=I%20want%20to%20order%20the%20Dimple%20Dial%20($${PRICE}).`;
+  const onClick = () => {
+    window.dispatchEvent(new CustomEvent("open-checkout"));
+  };
 
   return (
     <div className={`stickybar${show ? " show" : ""}`} aria-hidden={!show}>
@@ -27,9 +26,13 @@ export default function StickyBar() {
             ${PRICE} &bull; made to order &bull; lifetime guarantee
           </div>
         </div>
-        <a className="btn small" href={href} tabIndex={show ? 0 : -1}>
+        <button
+          className="btn small"
+          onClick={onClick}
+          tabIndex={show ? 0 : -1}
+        >
           Order
-        </a>
+        </button>
       </div>
     </div>
   );
