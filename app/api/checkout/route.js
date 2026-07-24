@@ -1,3 +1,7 @@
+// app/api/checkout/route.js
+// Same as before, only the custom_fields dropdown changed to the new offer:
+// pick a ball make/model, or send in your own (free prepaid label).
+
 import Stripe from "stripe";
 
 export async function POST(req) {
@@ -33,16 +37,25 @@ export async function POST(req) {
       shipping_address_collection: { allowed_countries: ["US"] },
       custom_fields: [
         {
-          key: "dialoption",
-          label: { type: "custom", custom: "Dial option" },
+          key: "ballchoice",
+          label: { type: "custom", custom: "Which ball goes in your dial?" },
           type: "dropdown",
           dropdown: {
             options: [
               {
-                label: "Build it from my ball (we email a label)",
-                value: "customball",
+                label: "I'll send in my own ball (free prepaid label)",
+                value: "own_ball",
               },
-              { label: "Use one of your golf balls", value: "houseball" },
+              { label: "Titleist Pro V1", value: "prov1" },
+              { label: "Titleist Pro V1x", value: "prov1x" },
+              { label: "Titleist AVX", value: "avx" },
+              { label: "TaylorMade TP5", value: "tp5" },
+              { label: "TaylorMade TP5x", value: "tp5x" },
+              { label: "Callaway Chrome Soft", value: "chromesoft" },
+              { label: "Callaway Chrome Tour", value: "chrometour" },
+              { label: "Bridgestone Tour B", value: "tourb" },
+              { label: "Srixon Z-Star", value: "zstar" },
+              { label: "Not sure yet, help me pick", value: "undecided" },
             ],
           },
         },
