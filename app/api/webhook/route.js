@@ -40,7 +40,7 @@ export async function POST(req) {
       (f) => f.key === "ballchoice"
     );
     const ballValue = ballField?.dropdown?.value || "";
-    const sendingOwnBall = ballValue === "own_ball";
+    const sendingOwnBall = ballValue === "ownball";
 
     if (!email) {
       console.error("No email on completed session", session.id);
