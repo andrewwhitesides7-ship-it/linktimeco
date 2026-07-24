@@ -1,6 +1,6 @@
 // app/api/checkout/route.js
-// Same as before, only the custom_fields dropdown changed to the new offer:
-// pick a ball make/model, or send in your own (free prepaid label).
+// Ball-choice dropdown: pick a make/model, or send in your own ball.
+// All dropdown values are alphanumeric only (Stripe rejects underscores).
 
 import Stripe from "stripe";
 
@@ -44,7 +44,7 @@ export async function POST(req) {
             options: [
               {
                 label: "I'll send in my own ball (free prepaid label)",
-                value: "own_ball",
+                value: "ownball",
               },
               { label: "Titleist Pro V1", value: "prov1" },
               { label: "Titleist Pro V1x", value: "prov1x" },
